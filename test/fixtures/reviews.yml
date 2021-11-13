@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  category: MyString
+  description: MyText
+  img_url_1: MyString
+  img_url_2: MyString
+  img_url_3: MyString
+  stars: 9.99
+  authors_grade: 1
+  stars_amount: 1
+
+two:
+  title: MyString
+  category: MyString
+  description: MyText
+  img_url_1: MyString
+  img_url_2: MyString
+  img_url_3: MyString
+  stars: 9.99
+  authors_grade: 1
+  stars_amount: 1

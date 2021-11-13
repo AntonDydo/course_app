@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @review.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @review.category %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @review.description %>
+</p>
+
+<p>
+  <strong>Img url 1:</strong>
+  <%= @review.img_url_1 %>
+</p>
+
+<p>
+  <strong>Img url 2:</strong>
+  <%= @review.img_url_2 %>
+</p>
+
+<p>
+  <strong>Img url 3:</strong>
+  <%= @review.img_url_3 %>
+</p>
+
+<p>
+  <strong>Stars:</strong>
+  <%= @review.stars %>
+</p>
+
+<p>
+  <strong>Authors grade:</strong>
+  <%= @review.authors_grade %>
+</p>
+
+<p>
+  <strong>Stars amount:</strong>
+  <%= @review.stars_amount %>
+</p>
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>
