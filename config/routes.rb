@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "reviews#index"
   devise_for :users
   get 'persons/profile'
   resources :reviews
