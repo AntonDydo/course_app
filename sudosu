@@ -1,0 +1,226 @@
+36418 execve("/usr/bin/sudo", ["sudo", "su", "-"], 0x7ffe5a4df008 /* 74 vars */) = 0
+36418 access("/etc/suid-debug", F_OK)   = -1 ENOENT (Нет такого файла или каталога)
+36418 brk(NULL)                         = 0x55db1cba9000
+36418 arch_prctl(0x3001 /* ARCH_??? */, 0x7ffcf9529260) = -1 EINVAL (Недопустимый аргумент)
+36418 fcntl(0, F_GETFD)                 = 0
+36418 fcntl(1, F_GETFD)                 = 0
+36418 fcntl(2, F_GETFD)                 = 0
+36418 access("/etc/suid-debug", F_OK)   = -1 ENOENT (Нет такого файла или каталога)
+36418 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/usr/lib/sudo/glibc-hwcaps/x86-64-v3/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 newfstatat(AT_FDCWD, "/usr/lib/sudo/glibc-hwcaps/x86-64-v3", 0x7ffcf9528490, 0) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/usr/lib/sudo/glibc-hwcaps/x86-64-v2/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 newfstatat(AT_FDCWD, "/usr/lib/sudo/glibc-hwcaps/x86-64-v2", 0x7ffcf9528490, 0) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/usr/lib/sudo/tls/x86_64/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 newfstatat(AT_FDCWD, "/usr/lib/sudo/tls/x86_64/x86_64", 0x7ffcf9528490, 0) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/usr/lib/sudo/tls/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 newfstatat(AT_FDCWD, "/usr/lib/sudo/tls/x86_64", 0x7ffcf9528490, 0) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/usr/lib/sudo/tls/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 newfstatat(AT_FDCWD, "/usr/lib/sudo/tls/x86_64", 0x7ffcf9528490, 0) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/usr/lib/sudo/tls/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 newfstatat(AT_FDCWD, "/usr/lib/sudo/tls", 0x7ffcf9528490, 0) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/usr/lib/sudo/x86_64/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 newfstatat(AT_FDCWD, "/usr/lib/sudo/x86_64/x86_64", 0x7ffcf9528490, 0) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/usr/lib/sudo/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 newfstatat(AT_FDCWD, "/usr/lib/sudo/x86_64", 0x7ffcf9528490, 0) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/usr/lib/sudo/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 newfstatat(AT_FDCWD, "/usr/lib/sudo/x86_64", 0x7ffcf9528490, 0) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/usr/lib/sudo/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 newfstatat(AT_FDCWD, "/usr/lib/sudo", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+36418 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=58938, ...}, AT_EMPTY_PATH) = 0
+36418 mmap(NULL, 58938, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f3a8fbcd000
+36418 close(3)                          = 0
+36418 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libaudit.so.1", O_RDONLY|O_CLOEXEC) = 3
+36418 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 8\0\0\0\0\0\0"..., 832) = 832
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=129112, ...}, AT_EMPTY_PATH) = 0
+36418 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3a8fbcb000
+36418 mmap(NULL, 196816, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f3a8fb9a000
+36418 mmap(0x7f3a8fb9d000, 32768, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f3a8fb9d000
+36418 mmap(0x7f3a8fba5000, 81920, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb000) = 0x7f3a8fba5000
+36418 mmap(0x7f3a8fbb9000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e000) = 0x7f3a8fbb9000
+36418 mmap(0x7f3a8fbbb000, 61648, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f3a8fbbb000
+36418 close(3)                          = 0
+36418 openat(AT_FDCWD, "/usr/lib/sudo/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libselinux.so.1", O_RDONLY|O_CLOEXEC) = 3
+36418 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 p\0\0\0\0\0\0"..., 832) = 832
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=166272, ...}, AT_EMPTY_PATH) = 0
+36418 mmap(NULL, 177672, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f3a8fb6e000
+36418 mmap(0x7f3a8fb74000, 106496, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6000) = 0x7f3a8fb74000
+36418 mmap(0x7f3a8fb8e000, 32768, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x20000) = 0x7f3a8fb8e000
+36418 mmap(0x7f3a8fb96000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x27000) = 0x7f3a8fb96000
+36418 mmap(0x7f3a8fb98000, 5640, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f3a8fb98000
+36418 close(3)                          = 0
+36418 openat(AT_FDCWD, "/usr/lib/sudo/libutil.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libutil.so.1", O_RDONLY|O_CLOEXEC) = 3
+36418 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\340\23\0\0\0\0\0\0"..., 832) = 832
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=14848, ...}, AT_EMPTY_PATH) = 0
+36418 mmap(NULL, 16656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f3a8fb69000
+36418 mmap(0x7f3a8fb6a000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7f3a8fb6a000
+36418 mmap(0x7f3a8fb6b000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f3a8fb6b000
+36418 mmap(0x7f3a8fb6c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f3a8fb6c000
+36418 close(3)                          = 0
+36418 openat(AT_FDCWD, "/usr/lib/sudo/libsudo_util.so.0", O_RDONLY|O_CLOEXEC) = 3
+36418 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`\\\0\0\0\0\0\0"..., 832) = 832
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=117632, ...}, AT_EMPTY_PATH) = 0
+36418 mmap(NULL, 121064, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f3a8fb4b000
+36418 mmap(0x7f3a8fb50000, 69632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x5000) = 0x7f3a8fb50000
+36418 mmap(0x7f3a8fb61000, 24576, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x7f3a8fb61000
+36418 mmap(0x7f3a8fb67000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b000) = 0x7f3a8fb67000
+36418 close(3)                          = 0
+36418 openat(AT_FDCWD, "/usr/lib/sudo/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+36418 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240\206\2\0\0\0\0\0"..., 832) = 832
+36418 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+36418 pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+36418 pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0+H)\227\201T\214\233\304R\352\306\3379\220%"..., 68, 896) = 68
+36418 newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=1983576, ...}, AT_EMPTY_PATH) = 0
+36418 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+36418 mmap(NULL, 2012056, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f3a8f95f000
+36418 mmap(0x7f3a8f985000, 1486848, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x26000) = 0x7f3a8f985000
+36418 mmap(0x7f3a8faf0000, 311296, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x191000) = 0x7f3a8faf0000
+36418 mmap(0x7f3a8fb3c000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1dc000) = 0x7f3a8fb3c000
+36418 mmap(0x7f3a8fb42000, 33688, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f3a8fb42000
+36418 close(3)                          = 0
+36418 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcap-ng.so.0", O_RDONLY|O_CLOEXEC) = 3
+36418 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260$\0\0\0\0\0\0"..., 832) = 832
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=27072, ...}, AT_EMPTY_PATH) = 0
+36418 mmap(NULL, 28992, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f3a8f957000
+36418 mmap(0x7f3a8f959000, 12288, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f3a8f959000
+36418 mmap(0x7f3a8f95c000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x5000) = 0x7f3a8f95c000
+36418 mmap(0x7f3a8f95d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x5000) = 0x7f3a8f95d000
+36418 close(3)                          = 0
+36418 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+36418 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\340\200\0\0\0\0\0\0"..., 832) = 832
+36418 pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 792) = 48
+36418 pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\270<\302\35\177\205gAq\255\235\6`\247\325r"..., 68, 840) = 68
+36418 newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=150720, ...}, AT_EMPTY_PATH) = 0
+36418 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3a8f955000
+36418 mmap(NULL, 136240, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f3a8f933000
+36418 mmap(0x7f3a8f93a000, 65536, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7000) = 0x7f3a8f93a000
+36418 mmap(0x7f3a8f94a000, 20480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x17000) = 0x7f3a8f94a000
+36418 mmap(0x7f3a8f94f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b000) = 0x7f3a8f94f000
+36418 mmap(0x7f3a8f951000, 13360, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f3a8f951000
+36418 close(3)                          = 0
+36418 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = 3
+36418 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\340\"\0\0\0\0\0\0"..., 832) = 832
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=613056, ...}, AT_EMPTY_PATH) = 0
+36418 mmap(NULL, 615184, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f3a8f89c000
+36418 mmap(0x7f3a8f89e000, 434176, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f3a8f89e000
+36418 mmap(0x7f3a8f908000, 167936, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6c000) = 0x7f3a8f908000
+36418 mmap(0x7f3a8f931000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x94000) = 0x7f3a8f931000
+36418 close(3)                          = 0
+36418 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+36418 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \"\0\0\0\0\0\0"..., 832) = 832
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=22912, ...}, AT_EMPTY_PATH) = 0
+36418 mmap(NULL, 24848, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f3a8f895000
+36418 mmap(0x7f3a8f897000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f3a8f897000
+36418 mmap(0x7f3a8f899000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7f3a8f899000
+36418 mmap(0x7f3a8f89a000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7f3a8f89a000
+36418 close(3)                          = 0
+36418 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3a8f893000
+36418 arch_prctl(ARCH_SET_FS, 0x7f3a8f893e00) = 0
+36418 mprotect(0x7f3a8fb3c000, 12288, PROT_READ) = 0
+36418 mprotect(0x7f3a8f89a000, 4096, PROT_READ) = 0
+36418 mprotect(0x7f3a8f94f000, 4096, PROT_READ) = 0
+36418 mprotect(0x7f3a8f931000, 4096, PROT_READ) = 0
+36418 mprotect(0x7f3a8f95d000, 4096, PROT_READ) = 0
+36418 mprotect(0x7f3a8fb67000, 4096, PROT_READ) = 0
+36418 mprotect(0x7f3a8fb6c000, 4096, PROT_READ) = 0
+36418 mprotect(0x7f3a8fb96000, 4096, PROT_READ) = 0
+36418 mprotect(0x7f3a8fbb9000, 4096, PROT_READ) = 0
+36418 mprotect(0x55db1b455000, 4096, PROT_READ) = 0
+36418 mprotect(0x7f3a8fc0e000, 8192, PROT_READ) = 0
+36418 munmap(0x7f3a8fbcd000, 58938)     = 0
+36418 set_tid_address(0x7f3a8f8940d0)   = 36418
+36418 set_robust_list(0x7f3a8f8940e0, 24) = 0
+36418 rt_sigaction(SIGRTMIN, {sa_handler=0x7f3a8f93ab90, sa_mask=[], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f3a8f9471f0}, NULL, 8) = 0
+36418 rt_sigaction(SIGRT_1, {sa_handler=0x7f3a8f93ac30, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_SIGINFO, sa_restorer=0x7f3a8f9471f0}, NULL, 8) = 0
+36418 rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+36418 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+36418 statfs("/sys/fs/selinux", 0x7ffcf9529230) = -1 ENOENT (Нет такого файла или каталога)
+36418 statfs("/selinux", 0x7ffcf9529230) = -1 ENOENT (Нет такого файла или каталога)
+36418 brk(NULL)                         = 0x55db1cba9000
+36418 brk(0x55db1cbca000)               = 0x55db1cbca000
+36418 openat(AT_FDCWD, "/proc/filesystems", O_RDONLY|O_CLOEXEC) = 3
+36418 newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+36418 read(3, "nodev\tsysfs\nnodev\ttmpfs\nnodev\tbd"..., 1024) = 389
+36418 read(3, "", 1024)                 = 0
+36418 close(3)                          = 0
+36418 access("/etc/selinux/config", F_OK) = -1 ENOENT (Нет такого файла или каталога)
+36418 prlimit64(0, RLIMIT_AS, NULL, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}) = 0
+36418 prlimit64(0, RLIMIT_AS, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0
+36418 prlimit64(0, RLIMIT_CORE, NULL, {rlim_cur=0, rlim_max=RLIM64_INFINITY}) = 0
+36418 prlimit64(0, RLIMIT_CPU, NULL, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}) = 0
+36418 prlimit64(0, RLIMIT_CPU, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0
+36418 prlimit64(0, RLIMIT_DATA, NULL, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}) = 0
+36418 prlimit64(0, RLIMIT_DATA, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0
+36418 prlimit64(0, RLIMIT_FSIZE, NULL, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}) = 0
+36418 prlimit64(0, RLIMIT_FSIZE, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0
+36418 prlimit64(0, RLIMIT_LOCKS, NULL, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}) = 0
+36418 prlimit64(0, RLIMIT_MEMLOCK, NULL, {rlim_cur=1968472*1024, rlim_max=1968472*1024}) = 0
+36418 prlimit64(0, RLIMIT_NOFILE, NULL, {rlim_cur=1024, rlim_max=1024*1024}) = 0
+36418 prlimit64(0, RLIMIT_NOFILE, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = -1 EPERM (Операция не позволена)
+36418 prlimit64(0, RLIMIT_NOFILE, {rlim_cur=256, rlim_max=RLIM64_INFINITY}, NULL) = -1 EPERM (Операция не позволена)
+36418 prlimit64(0, RLIMIT_NOFILE, {rlim_cur=1024*1024, rlim_max=1024*1024}, NULL) = 0
+36418 prlimit64(0, RLIMIT_NPROC, NULL, {rlim_cur=61245, rlim_max=61245}) = 0
+36418 prlimit64(0, RLIMIT_NPROC, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = -1 EPERM (Операция не позволена)
+36418 prlimit64(0, RLIMIT_NPROC, {rlim_cur=61245, rlim_max=61245}, NULL) = 0
+36418 prlimit64(0, RLIMIT_RSS, NULL, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}) = 0
+36418 prlimit64(0, RLIMIT_RSS, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0
+36418 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+36418 prlimit64(0, RLIMIT_STACK, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}, NULL) = 0
+36418 fcntl(0, F_GETFL)                 = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
+36418 fcntl(1, F_GETFL)                 = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
+36418 fcntl(2, F_GETFL)                 = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
+36418 openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=5713520, ...}, AT_EMPTY_PATH) = 0
+36418 mmap(NULL, 5713520, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f3a8f320000
+36418 close(3)                          = 0
+36418 openat(AT_FDCWD, "/etc/localtime", O_RDONLY|O_CLOEXEC) = 3
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1321, ...}, AT_EMPTY_PATH) = 0
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1321, ...}, AT_EMPTY_PATH) = 0
+36418 read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\r\0\0\0\0"..., 4096) = 1321
+36418 lseek(3, -803, SEEK_CUR)          = 518
+36418 read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\r\0\0\0\0"..., 4096) = 803
+36418 close(3)                          = 0
+36418 newfstatat(AT_FDCWD, "/etc/sudo.conf", {st_mode=S_IFREG|0644, st_size=3975, ...}, 0) = 0
+36418 openat(AT_FDCWD, "/etc/sudo.conf", O_RDONLY) = 3
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3975, ...}, AT_EMPTY_PATH) = 0
+36418 read(3, "#\n# Default /etc/sudo.conf file\n"..., 4096) = 3975
+36418 read(3, "", 4096)                 = 0
+36418 close(3)                          = 0
+36418 geteuid()                         = 1000
+36418 access("/home/a/.rvm/gems/ruby-3.0.0/bin/sudo", X_OK) = -1 ENOENT (Нет такого файла или каталога)
+36418 access("/home/a/.rvm/gems/ruby-3.0.0@global/bin/sudo", X_OK) = -1 ENOENT (Нет такого файла или каталога)
+36418 access("/usr/share/rvm/rubies/ruby-3.0.0/bin/sudo", X_OK) = -1 ENOENT (Нет такого файла или каталога)
+36418 access("/usr/share/rvm/bin/sudo", X_OK) = -1 ENOENT (Нет такого файла или каталога)
+36418 access("/home/a/.nvm/versions/node/v16.13.0/bin/sudo", X_OK) = -1 ENOENT (Нет такого файла или каталога)
+36418 access("/usr/local/sbin/sudo", X_OK) = -1 ENOENT (Нет такого файла или каталога)
+36418 access("/usr/local/bin/sudo", X_OK) = -1 ENOENT (Нет такого файла или каталога)
+36418 access("/usr/sbin/sudo", X_OK)    = -1 ENOENT (Нет такого файла или каталога)
+36418 access("/usr/bin/sudo", X_OK)     = 0
+36418 newfstatat(AT_FDCWD, "/usr/bin/sudo", {st_mode=S_IFREG|S_ISUID|0755, st_size=190952, ...}, 0) = 0
+36418 openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2996, ...}, AT_EMPTY_PATH) = 0
+36418 read(3, "# Locale name alias data base.\n#"..., 4096) = 2996
+36418 read(3, "", 4096)                 = 0
+36418 close(3)                          = 0
+36418 openat(AT_FDCWD, "/usr/share/locale/ru/LC_MESSAGES/sudo.mo", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога)
+36418 openat(AT_FDCWD, "/usr/share/locale-langpack/ru/LC_MESSAGES/sudo.mo", O_RDONLY) = 3
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=18786, ...}, AT_EMPTY_PATH) = 0
+36418 mmap(NULL, 18786, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f3a8fbd7000
+36418 close(3)                          = 0
+36418 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY) = 3
+36418 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=27002, ...}, AT_EMPTY_PATH) = 0
+36418 mmap(NULL, 27002, PROT_READ, MAP_SHARED, 3, 0) = 0x7f3a8fbd0000
+36418 close(3)                          = 0
+36418 futex(0x7f3a8fb4167c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+36418 write(2, "sudo", 4)               = 4
+36418 write(2, ": ", 2)                 = 2
+36418 write(2, "\321\215\321\204\321\204\320\265\320\272\321\202\320\270\320\262\320\275\321\213\320\271 uid \320\275\320\265 "..., 284) = 284
+36418 ioctl(2, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+36418 write(2, "\r", 1)                 = 1
+36418 write(2, "\n", 1)                 = 1
+36418 exit_group(1)                     = ?
+36418 +++ exited with 1 +++
