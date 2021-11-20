@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_14_172116) do
+ActiveRecord::Schema.define(version: 2021_11_20_125854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +19,7 @@ ActiveRecord::Schema.define(version: 2021_11_14_172116) do
     t.string "title"
     t.string "category"
     t.text "description"
-    t.string "img_url_1"
-    t.string "img_url_2"
-    t.string "img_url_3"
-    t.decimal "stars"
     t.integer "authors_grade"
-    t.integer "stars_amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
