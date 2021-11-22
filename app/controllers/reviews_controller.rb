@@ -5,16 +5,12 @@ before_action :authenticate_user!, only: %i[new create edit destroy update]
   # GET /reviews or /reviews.json
   def index
     
-    (current_user == nil) ? @reviews = Review.all : @reviews = current_user.reviews.all
+     @reviews = Review.all 
     
   end
 
   # GET /reviews/1 or /reviews/1.json
-  def show_only
-    @reviews = current_user.reviews.all
-  end
-  
-  def show_all
+  def show
     @reviews = Review.all
   end
   # GET /reviews/new
