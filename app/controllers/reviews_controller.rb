@@ -1,12 +1,22 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: %i[ show edit update destroy ]
-before_action :authenticate_user!, only: %i[new create edit destroy update]
+  before_action :set_review, only: %i[ show edit update destroy favorite unfavorite]
+  before_action :authenticate_user!, only: %i[new create edit destroy update favorite]
 
   # GET /reviews or /reviews.json
   def index
-    
-     @reviews = Review.all 
-    
+   @reviews = Review.all 
+  end
+
+  def favorite
+    if current_user.favorites.where(:id=>@review.id).blank?
+      current_user.favorites << @review
+    end
+  redirect_back fallback_location: root_path
+  end
+
+  def unfavorite
+    current_user.favorites.delete(@review)
+    redirect_back fallback_location: root_path
   end
 
   # GET /reviews/1 or /reviews/1.json
@@ -16,13 +26,12 @@ before_action :authenticate_user!, only: %i[new create edit destroy update]
   # GET /reviews/new
   def new
     @review = current_user.reviews.new
-    
   end
 
   # GET /reviews/1/edit
   def edit
   end
-    
+
   # POST /reviews or /reviews.json
   def create
     @review = current_user.reviews.new(review_params)
@@ -72,7 +81,7 @@ before_action :authenticate_user!, only: %i[new create edit destroy update]
     
     # Only allow a list of trusted parameters through.
     def review_params
-      
+
       params.require(:review).permit(:title, :category, :rich_description, :authors_grade)
     end
   end

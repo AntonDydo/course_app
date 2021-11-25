@@ -1,5 +1,5 @@
 class PersonsController < ApplicationController
   def profile
-    @reviews = current_user.reviews.all
+    current_user == nil ? nil : @reviews = current_user.reviews.all
   end
 end
