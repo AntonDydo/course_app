@@ -28,6 +28,15 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  main: Main
+  profile: Profile
+  en: English
+  ru: Russian
+  theme-dark: Dark Theme
+  theme-light: Light Theme
+  log: Log in
+  create: Create accaunt
+  exit: Log out
+  reviews:
+    title: reviews

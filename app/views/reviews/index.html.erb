@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Reviews</h1>
+<h1><%= t('reviews.title') %></h1>
 
 <table>
   <thead>
@@ -24,20 +24,20 @@
       <td><%= link_to 'Show', review %></td>
       <td><%= link_to 'Edit', edit_review_path(review) %></td>
       <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+      <td><%= link_to " favorite ",   favorited_path(review) %></td>
+      <td><%= link_to " unfavorite ",   unfavorited_path(review) %></td>
 
-    <% if current_user %>
-    <%= link_to " favorite ",   favorited_path(review) %>
-     <%= link_to " unfavorite ",   unfavorited_path(review) %>
-    
-    <% end %>
-    <% end %>
+    </tr>
+    <%end%>
+
   </tbody>
 </table>
+<% if current_user != nil  %>
 <% current_user.favorites.all.each do |review| %>
-    <tr>
-      <td><%= review.title %></td>
-    </tr>
+<tr>
+  <td><%= review.title %></td>
+</tr>
 <br>
- <% end %>
+<% end %>
+<%end%>
 <%= link_to 'New Review', new_review_path %>
