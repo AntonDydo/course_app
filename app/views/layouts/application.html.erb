@@ -43,6 +43,11 @@
         </div>
       </nav>
     </header>
+<%= form_tag results_path, method: :get, role: 'search' do %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag "Искать", name: nil %>
+<% end %>
+
 
 
     <main class='<%= controller.controller_name %>'>
