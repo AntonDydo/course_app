@@ -40,3 +40,5 @@ en:
   exit: Log out
   reviews:
     title: reviews
+    categories: Categories allowed - game film series book
+    grade_error_message: Enter valid authors grade (1...10)
