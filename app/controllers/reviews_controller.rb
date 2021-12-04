@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show edit update destroy favorite unfavorite voted]
   
   before_action :authenticate_user!, only: %i[new create edit destroy update favorite voted]
-
+  
   # GET /reviews or /reviews.json
   def index
    @reviews = Review.all 

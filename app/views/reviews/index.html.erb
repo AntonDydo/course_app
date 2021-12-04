@@ -25,11 +25,13 @@
       <td><%= review.authors_grade %></td> 
       <td><% rating = review.find_votes_for(vote_scope: 'rank').sum(:vote_weight).to_f  %>
         <% total = review.find_votes_for(vote_scope: 'rank').size.to_f %>
-        <%= total== 0 ? "no raties" : rating / total %>
+        <%= total== 0 ? "no raties" : (rating / total).round(1) %>
       </td> 
+      <% if current_user.try(:admin?) %>
       <td><%= link_to 'Show', review %></td>
       <td><%= link_to 'Edit', edit_review_path(review) %></td>
       <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
       <td><%= link_to " favorite ",   favorited_path(review) %></td>
       <td><%= link_to " unfavorite ",   unfavorited_path(review) %></td>
       <td><%= link_to "1", vote_path(review,:score => 1) %></td>
@@ -50,5 +52,7 @@
 </tr>
 <br>
 <% end %>
+<%=  current_user.admin? ? 'admin' : 'not admin' %>
+
 <%end%>
 <%= link_to 'New Review', new_review_path %>
