@@ -1,13 +1,25 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: %i[ show edit update destroy favorite unfavorite]
-  before_action :authenticate_user!, only: %i[new create edit destroy update favorite]
+  START_RATING = 0
+  before_action :set_review, only: %i[ show edit update destroy favorite unfavorite voted]
+  
+  before_action :authenticate_user!, only: %i[new create edit destroy update favorite voted]
 
   # GET /reviews or /reviews.json
   def index
    @reviews = Review.all 
+
+  end
+
+  def voted
+    @review.vote_by voter: current_user, vote: 'like', vote_scope: 'rank', vote_weight: params[:score]
+    rating = @review.find_votes_for(vote_scope: 'rank').sum(:vote_weight).to_i
+    total = @review.find_votes_for(vote_scope: 'rank').size.to_i
+    @avr = rating / total
+    redirect_back fallback_location: root_path
   end
 
   def favorite
+
     if current_user.favorites.where(:id=>@review.id).blank?
       current_user.favorites << @review
     end
@@ -77,6 +89,10 @@ class ReviewsController < ApplicationController
     def set_review
       @review = Review.find(params[:id])
 
+    end
+
+    def set_grade
+      @grade = params[:number]
     end
     
     # Only allow a list of trusted parameters through.

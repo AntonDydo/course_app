@@ -1,5 +1,7 @@
 class Review < ApplicationRecord
+acts_as_votable
 	 include PgSearch::Model
+
 	 validates :category, inclusion: {in: %w(game film book series игра фильм книга сериал), 
 	 	message: I18n.t('reviews.categories')}
 	 validates :authors_grade, inclusion: {in:1..10, message: I18n.t('reviews.grade_error_message')}
@@ -12,4 +14,5 @@ class Review < ApplicationRecord
     pg_search_scope :search, against: [:title, :category], associated_against: {
     rich_text_rich_description: [:body]
     }
+    
 end
