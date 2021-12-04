@@ -8,3 +8,4 @@
 User.create(:email => 'dydo00@bk.ru', :password => '123456', :password_confirmation => '123456', :admin => true)
 User.create(:email => 'dydo01@bk.ru', :password => '123456', :password_confirmation => '123456', :admin => false)
 User.create(:email => 'dydo02@bk.ru', :password => '123456', :password_confirmation => '123456', :admin => false)
+User.create(:email => 'dydo10@bk.ru', :password => '123456', :password_confirmation => '123456', :admin => true)
