@@ -1,5 +1,6 @@
 class PersonsController < ApplicationController
 before_action :set_user, only: %i[ profile]
+ 
   
   def profile
     current_user == nil ? nil : @reviews = @user.reviews.all
@@ -12,4 +13,17 @@ private
     @user = User.find(params[:id])
   end
 
+def self.from_omniauth(access_token)
+    data = access_token.info
+    user = User.where(email: data['email']).first
+
+    # Uncomment the section below if you want users to be created if they don't exist
+    # unless user
+    #     user = User.create(name: data['name'],
+    #        email: data['email'],
+    #        password: Devise.friendly_token[0,20]
+    #     )
+    # end
+    user
+end
 end

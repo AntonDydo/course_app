@@ -61,4 +61,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pg_search'
 gem 'acts_as_votable'
-gem "google-cloud-storage", "~> 1.8", require: false
+
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+gem "aws-sdk-s3", require: false
