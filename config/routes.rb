@@ -1,5 +1,5 @@
   Rails.application.routes.draw do
- 
+   scope '(:locale)', locale: /en|ru/ do
       root "reviews#index"
      
       get 'person/profile/:id', to: 'persons#profile', as: 'profile'
@@ -10,6 +10,6 @@
       get 'results', to: 'results#index', as: 'results'
       get 'vote/:id', to: 'reviews#voted', as: 'vote'
       devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  
+   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
