@@ -86,10 +86,6 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
 
     end
-
-    def set_grade
-      @grade = params[:number]
-    end
     
     # Only allow a list of trusted parameters through.
     def review_params

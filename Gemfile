@@ -25,9 +25,7 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 
-gem "google-cloud-storage", "~> 1.11", require: false
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
@@ -63,3 +61,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pg_search'
 gem 'acts_as_votable'
+gem "google-cloud-storage", "~> 1.8", require: false
