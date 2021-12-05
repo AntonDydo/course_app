@@ -1,41 +1,67 @@
 <p id="notice"><%= notice %></p>
-<% if current_user == nil %>
-<div>Log or sign in, please </div>
-<% else %>
-<h1>Reviews</h1>
+<h1><%= t('reviews.alltitle') %></h1>
+<div class = 'add-button'>
+  <%= link_to t('new'), new_review_path %>
+</div>
+<% @reviews.each do |review| %>
+ <div class='container own-container'>
+  <div class='row '>
+    <div class="col meta-inf">
+      <div class='row'>
+        <strong><%=t("title")%>:</strong>
+        <%=link_to review.title, review %>
+      </div>
+      <div class='row'>
+        <strong><%=t("category")%>:</strong>
+        <%= review.category %>
+      </div>
+      <div class='row'>
+        <strong><%=t("auth_grade")%>:</strong>
+        <%= review.authors_grade %>
+      </div>
+      <div class='row'>
+        <strong><%=t("avg")%>:</strong>
+        <% rating = review.find_votes_for(vote_scope: 'rank').sum(:vote_weight).to_f  %>
+        <% total = review.find_votes_for(vote_scope: 'rank').size.to_f %>
+        <%= total== 0 ? "no raties" : (rating / total).round(1) %>
+      </div>
+      <div class='row'>
+        <strong><%=t("author")%>:</strong>
+        <%= User.find(review.user_id).email %>
+      </div>
+      <div class='row own-row'>
+       <span><%= link_to "1", vote_path(review,:score => 1) %></span>
+      <span><%= link_to "2", vote_path(review,:score => 2) %></span>
+      <span><%= link_to "3", vote_path(review,:score => 3) %></span>
+      <span><%= link_to "4", vote_path(review,:score => 4) %></span>
+      <span><%= link_to "5", vote_path(review,:score => 5) %></span>
+      </div>
+       <div class='row omwn-row'>
+        <span><%= link_to image_tag('like.png'),   favorited_path(review) %></span>
+      <span><%= link_to image_tag('dislike.png'),   unfavorited_path(review) %></span>
+      </div>
+    </div> 
+    <div class="col-6">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Description</th>
-      <th>Authors grade</th>      
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <div><%= current_user ? current_user.id : 'no user'%></div>
-  <tbody>
-    <% @reviews.try(:each) {|review| %>
-    <tr>
-      <td><%= review.title %></td>
-      <td><%= review.category %></td>
-      <td><%= review.rich_description %></td>        
-      <td><%= review.authors_grade %></td> 
-      <td><%= link_to 'Show', review %></td>
-      <td><%= link_to 'Edit', edit_review_path(review) %></td>
-      <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <%}%>    
-  </tbody>
-</table>
+      <%= review.rich_description %>
+    </div>
+
+  </div>
+</div>
+ <%end%>
+<span>Your favorites: </span>
+<% if current_user != nil  %>
+<% current_user.favorites.all.each do |review| %>
+<span><%=link_to review.title, review %>; </span>
+<% end %>
+<% end %>
+<div class='divider'></div>
 <% if current_user.admin? %>
 <% @users.each do |user| %>
-  <h4><%= link_to user.email, profile_path(user) %></h4>
+  <h6><%= link_to user.email, profile_path(user) %></h6>
   <hr>
 <% end %>
 <% end %>
-<% end %>
 <br>
-
 <%= link_to 'New Review', new_review_path %>
+

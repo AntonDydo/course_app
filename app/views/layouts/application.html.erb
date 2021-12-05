@@ -40,9 +40,25 @@
               <div class="nav-link" href="#"><%= link_to t("theme-light"), cookieset_path(theme: 'light') %></div>
           </ul>
           <span class="navbar-text">
-            <button type="button" class="btn btn-secondary"><%= link_to t('create'), new_user_registration_path %></button>
-            <button type="button" class="btn btn-secondary"><%= link_to t('log'), new_user_session_path %></button>
-            <button type="button" class="btn btn-secondary"><%= link_to t('exit'), destroy_user_session_path, :method => :delete %></button>
+
+
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Log options
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#"><%= link_to t('create'), new_user_registration_path %></a>
+    <a class="dropdown-item" href="#"><%= link_to t('log'), new_user_session_path %></a>
+    <a class="dropdown-item" href="#"><%= link_to t('exit'), destroy_user_session_path, :method => :delete %></a>
+    <a class="dropdown-item" href="#"><%= link_to t('google'), user_google_oauth2_omniauth_authorize_path, method: :post %></a>
+  </div>
+</div>
+
+
+
+
+
           </span>
         </div>
       </nav>

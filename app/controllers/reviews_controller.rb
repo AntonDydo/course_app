@@ -1,12 +1,14 @@
 class ReviewsController < ApplicationController
+  RESULTS_PER_PAGE = 5
   before_action :set_review, only: %i[ show edit update destroy favorite unfavorite voted]
   
   before_action :authenticate_user!, only: %i[new create edit destroy update favorite voted]
   
   # GET /reviews or /reviews.json
   def index
-   @reviews = Review.all 
-
+    @current_page = params[:page]&.to_i || 1
+    @pages_count = (Review.count / RESULTS_PER_PAGE.to_f).ceil
+    @reviews = Review.order('created_at DESC').limit(RESULTS_PER_PAGE).offset(RESULTS_PER_PAGE * (@current_page - 1))
   end
 
   def voted

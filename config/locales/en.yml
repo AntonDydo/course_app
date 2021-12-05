@@ -38,7 +38,15 @@ en:
   log: Log in
   create: Create accaunt
   exit: Log out
+  title: Title
+  category: Category
+  avg: Average rate
+  auth_grade: Authors grade
+  author: Created by
+  new: New
+  google: Log via google
   reviews:
     title: reviews
+    alltitle: My reviews
     categories: Categories allowed - game film series book
     grade_error_message: Enter valid authors grade (1...10)

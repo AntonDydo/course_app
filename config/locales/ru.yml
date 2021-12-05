@@ -8,7 +8,15 @@ ru:
   log: Войти
   create: Создать акккаунт
   exit: Выйти
+  title: Название
+  category: Категория
+  avg: Средний рейтинг
+  auth_grade: Оценка автора
+  author: Создано 
+  new: Новый
+  google: Войти через google
   reviews:
     title: Обзоры
+    alltitle: Мои обзоры
     categories: Разрешены категории - игра фильм сериал книга 
     grade_error_message: Введите корректную оценку автора (1...10)

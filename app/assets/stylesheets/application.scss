@@ -1,1 +1,48 @@
 @import "./actiontext.scss";
+@import "./reviews.scss";
+.own-container{
+	border: solid 1px black;
+	margin: 20px;
+    padding:30px;
+}
+.meta-inf{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.attachment{
+	display:flex;
+	justify-content: space-between;
+}
+
+.attachment img{
+	
+display:flex;
+justify-content: space-between;
+}
+.own-row span{
+margin:5px;
+	
+}
+ 
+.paginates{
+	display:flex;
+}
+.paginates li{
+	margin: 10px;
+}
+.paginates .active a{
+	color: #000;
+}
+.divider{
+	height:20px;
+}
+.add-button{
+	position:absolute;
+	top: 10%;
+	right:3%;
+
+}
+.add-button a{
+	font-size:20pt;
+}
