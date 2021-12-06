@@ -20,68 +20,68 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
-        
+            
             <li class="nav-item active">
               <div class="nav-link" href="#"><% if current_user != nil %>
                 <%= link_to t('profile'), profile_path(current_user) , :style=>'color: DarkGrey;'%>
-                 <%end%> </div>
-            </li>
+                <%end%> </div>
+              </li>
 
-            <li class="nav-item active">
-              <div class="nav-link" href="#"><%= link_to t("ru"), cookieset_path(locale: 'ru'), :style=>'color: DarkGrey;' %></div>
-            </li>
-            <li class="nav-item active">
-              <div class="nav-link" href="#"><%= link_to t("en"), cookieset_path(locale: 'en') , :style=>'color: DarkGrey;'%></div>
-            </li>
-            <li class="nav-item active">
-              <div class="nav-link" href="#"><%= link_to t("theme-dark"), cookieset_path(theme: 'dark') , :style=>'color: DarkGrey;'%></div>
-            </li>
-            <li class="nav-item active">
-              <div class="nav-link" href="#"><%= link_to t("theme-light"), cookieset_path(theme: 'light'), :style=>'color: DarkGrey;' %></div>
-          </ul>
-          <span class="navbar-text">
-
-
-
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Log options
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#"><%= link_to t('create'), new_user_registration_path %></a>
-    <a class="dropdown-item" href="#"><%= link_to t('log'), new_user_session_path %></a>
-    <a class="dropdown-item" href="#"><%= link_to t('exit'), destroy_user_session_path, :method => :delete %></a>
-    <a class="dropdown-item" href="#"><%= link_to t('google'), user_google_oauth2_omniauth_authorize_path, method: :post %></a>
-  </div>
-</div>
-        </span>
-        </div>
-      </nav>
-    </header>
-   
+              <li class="nav-item active">
+                <div class="nav-link" href="#"><%= link_to t("ru"), cookieset_path(locale: 'ru'), :style=>'color: DarkGrey;' %></div>
+              </li>
+              <li class="nav-item active">
+                <div class="nav-link" href="#"><%= link_to t("en"), cookieset_path(locale: 'en') , :style=>'color: DarkGrey;'%></div>
+              </li>
+              <li class="nav-item active">
+                <div class="nav-link" href="#"><%= link_to t("theme-dark"), cookieset_path(theme: 'dark') , :style=>'color: DarkGrey;'%></div>
+              </li>
+              <li class="nav-item active">
+                <div class="nav-link" href="#"><%= link_to t("theme-light"), cookieset_path(theme: 'light'), :style=>'color: DarkGrey;' %></div>
+              </ul>
+              <span class="navbar-text">
 
 
 
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Log options
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#"><%= link_to t('create'), new_user_registration_path %></a>
+                    <a class="dropdown-item" href="#"><%= link_to t('log'), new_user_session_path %></a>
+                    <a class="dropdown-item" href="#"><%= link_to t('exit'), destroy_user_session_path, :method => :delete %></a>
+                    <a class="dropdown-item" href="#"><%= link_to t('google'), user_google_oauth2_omniauth_authorize_path, method: :post %></a>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </nav>
+        </header>
+        
 
-    <main class=' <%= cookies[:theme] == 'dark' ? 'p-3 mb-2 bg-secondary text-white' : '' %><%= controller.controller_name %>'>
-      <%= form_tag results_path, method: :get, role: 'search' do%>
-  <%= text_field_tag :query, params[:query],:style=>'margin: 10px;' %>
-  <%= submit_tag "Искать", name: nil %>
-<% end %>
-      <%= yield %>
-    </main>
-    
-    <footer class="bg-light text-center text-lg-start">
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
-        <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-      </div>
-      <!-- Copyrdight -->
-    </footer>
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-  </html>
+
+
+
+        <main class=' <%= cookies[:theme] == 'dark' ? 'p-3 mb-2 bg-secondary text-white' : '' %><%= controller.controller_name %>'>
+          <%= form_tag results_path, method: :get, role: 'search' do%>
+          <%= text_field_tag :query, params[:query],:style=>'margin: 10px;' %>
+          <%= submit_tag "Искать", name: nil %>
+          <% end %>
+          <%= yield %>
+        </main>
+        
+        <footer class="bg-light text-center text-lg-start">
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+          </div>
+          <!-- Copyrdight -->
+        </footer>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      </body>
+      </html>

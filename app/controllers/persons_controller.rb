@@ -1,8 +1,6 @@
 class PersonsController < ApplicationController
-
 before_action :set_user, only: %i[ profile]
-before_action :authenticate_user!, only: %i[ profile]
- 
+before_action :authenticate_user!, only: %i[ profile] 
   
   def profile
     @reviews = @user.reviews.all.order('created_at DESC')
@@ -15,7 +13,7 @@ private
     @user = User.find(params[:id])
   end
 
-def self.from_omniauth(access_token)
+  def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
 
@@ -27,5 +25,5 @@ def self.from_omniauth(access_token)
     #     )
     # end
     user
-end
+  end
 end
