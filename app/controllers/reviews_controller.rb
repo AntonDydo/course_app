@@ -1,14 +1,21 @@
 class ReviewsController < ApplicationController
   RESULTS_PER_PAGE = 5
+
+
   before_action :set_review, only: %i[ show edit update destroy favorite unfavorite voted]
   
-  before_action :authenticate_user!, only: %i[new create edit destroy update favorite voted]
+  before_action :authenticate_user!, only: %i[new create edit destroy update favorite unfavorite voted]
   
   # GET /reviews or /reviews.json
   def index
     @current_page = params[:page]&.to_i || 1
     @pages_count = (Review.count / RESULTS_PER_PAGE.to_f).ceil
     @reviews = Review.order('created_at DESC').limit(RESULTS_PER_PAGE).offset(RESULTS_PER_PAGE * (@current_page - 1))
+
+  end
+
+  def popular
+      @reviews = Review.order('created_at DESC')
   end
 
   def voted
@@ -17,14 +24,16 @@ class ReviewsController < ApplicationController
   end
 
   def favorite
-
+    
     if current_user.favorites.where(:id=>@review.id).blank?
+      @review.TotalLiked += 1; 
       current_user.favorites << @review
     end
   redirect_back fallback_location: root_path
   end
 
   def unfavorite
+    @review.TotalLiked -= 1; 
     current_user.favorites.delete(@review)
     redirect_back fallback_location: root_path
   end

@@ -1,7 +1,7 @@
   Rails.application.routes.draw do
 
       root "reviews#index"
-     
+      get  'reviews/popular', to: 'reviews#popular', as: 'showpopular'
       get 'person/profile/:id', to: 'persons#profile', as: 'profile'
       resources :reviews
       get 'favorites/:id', to: 'reviews#favorite', as: 'favorited'

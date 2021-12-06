@@ -1,6 +1,8 @@
 class Review < ApplicationRecord
+	HIGH_RAITING = 10
     acts_as_votable
 	include PgSearch::Model
+	scope :popular, -> { where('TotalLiked > HIGH_RAITING/2') }
 
 	validates :category, inclusion: {in: %w(game film book series игра фильм книга сериал), 
 	 	message: I18n.t('reviews.categories')}

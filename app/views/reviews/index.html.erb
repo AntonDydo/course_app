@@ -1,6 +1,9 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1><%= t('reviews.title') %></h1>
+
+<h1><%=link_to t("popular"), showpopular_path%></h1>
 <div class = 'add-button'>
   <%= link_to t('new'), new_review_path %>
 </div>
@@ -41,6 +44,10 @@
         <span><%= link_to image_tag('like.png'),   favorited_path(review) %></span>
       <span><%= link_to image_tag('dislike.png'),   unfavorited_path(review) %></span>
       </div>
+          <div class='row'>
+        <strong><%=t("total")%>:</strong>
+        <%= review.TotalLiked %>
+      </div>
     </div> 
     <div class="col-6">
 
@@ -57,3 +64,5 @@
     </li>  
   <%end%>
 </ul>
+
+

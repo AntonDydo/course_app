@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
-<h1><%= t('reviews.alltitle') %></h1>
+
+<h1><%= t('reviews.title') %></h1>
+<h1></h1>
 <div class = 'add-button'>
   <%= link_to t('new'), new_review_path %>
 </div>
-<% @reviews.each do |review| %>
+ <% @reviews.each do |review| %>
+ <% if review.TotalLiked >= 5 %>
  <div class='container own-container'>
   <div class='row '>
     <div class="col meta-inf">
@@ -52,20 +55,5 @@
 
   </div>
 </div>
+<%  end %>
  <%end%>
-<span>Your favorites: </span>
-<% if current_user != nil  %>
-<% current_user.favorites.all.each do |review| %>
-<span><%=link_to review.title, review %>; </span>
-<% end %>
-<% end %>
-<div class='divider'></div>
-<% if current_user.admin? %>
-<% @users.each do |user| %>
-  <h6><%= link_to user.email, profile_path(user) %></h6>
-  <hr>
-<% end %>
-<% end %>
-<br>
-<%= link_to 'New Review', new_review_path %>
-
