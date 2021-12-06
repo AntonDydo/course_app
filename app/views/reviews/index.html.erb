@@ -44,13 +44,12 @@
         <span><%= link_to image_tag('like.png'),   favorited_path(review) %></span>
       <span><%= link_to image_tag('dislike.png'),   unfavorited_path(review) %></span>
       </div>
-          <div class='row'>
-        <strong><%=t("total")%>:</strong>
-        <%= review.TotalLiked %>
+        <div class='row'>
+          <strong><%=t("total")%>:</strong>
+          <%= review.TotalLiked %>
       </div>
     </div> 
     <div class="col-6">
-
       <%= review.rich_description %>
     </div>
 
