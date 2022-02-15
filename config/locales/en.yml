@@ -47,8 +47,13 @@ en:
   total: Added to favorite
   google: Log via google
   popular: Show Popular
+  game: Game
+  film: Film
+  serial: Serial
+  book: Book
   reviews:
     title: reviews
     alltitle: My reviews
     categories: Categories allowed - game film series book
     grade_error_message: Enter valid authors grade (1...10)
+

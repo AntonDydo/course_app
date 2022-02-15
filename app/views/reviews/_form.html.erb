@@ -17,8 +17,18 @@
 </div>
 
 <div class="field">
-  <%= form.label :category %>
-  <%= form.text_field :category %>
+<%= form.radio_button :category, 'game'%>
+<%= form.label :category, t('game') %>
+
+<%= form.radio_button :category, 'film'%>
+<%= form.label :category, t('film') %>
+
+<%= form.radio_button :category, 'serial'%>
+<%= form.label :category, t('serial') %>
+
+<%= form.radio_button :category, 'book'%>
+<%= form.label :category, t('book') %>
+
 </div>
 
 <div class="field">

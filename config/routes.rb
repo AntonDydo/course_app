@@ -2,6 +2,7 @@
 
       root "reviews#index"
       get  'reviews/popular', to: 'reviews#popular', as: 'showpopular'
+      get  'reviews/sort', to: 'reviews#sort', as: 'sort'
       get 'person/profile/:id', to: 'persons#profile', as: 'profile'
       resources :reviews
       get 'favorites/:id', to: 'reviews#favorite', as: 'favorited'

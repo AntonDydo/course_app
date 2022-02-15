@@ -18,6 +18,10 @@ class ReviewsController < ApplicationController
       @reviews = Review.order('created_at DESC')
   end
 
+  def sort
+      @reviews = Review.where(category: params[:category]);
+  end
+
   def voted
     @review.vote_by voter: current_user, vote: 'like', vote_scope: 'rank', vote_weight: params[:score]
     redirect_back fallback_location: root_path

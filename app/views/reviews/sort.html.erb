@@ -1,19 +1,12 @@
-
 <p id="notice"><%= notice %></p>
 
 <h1><%= t('reviews.title') %></h1>
-
-<h1><%=link_to t("popular"), showpopular_path%></h1>
-<span><h2><%=link_to 'games', sort_path(category: "game")%></h2>
-<h2><%=link_to 'films', sort_path(category: "film")%></h2>
-<h2><%=link_to 'serials', sort_path(category: "serial")%></h2>
-<h2><%=link_to 'books', sort_path(category: "book")%></h2>
-</span>
-
+<h1></h1>
 <div class = 'add-button'>
   <%= link_to t('new'), new_review_path %>
 </div>
  <% @reviews.each do |review| %>
+
  <div class='container own-container'>
   <div class='row '>
     <div class="col meta-inf">
@@ -50,24 +43,17 @@
         <span><%= link_to image_tag('like.png'),   favorited_path(review) %></span>
       <span><%= link_to image_tag('dislike.png'),   unfavorited_path(review) %></span>
       </div>
-        <div class='row'>
-          <strong><%=t("total")%>:</strong>
-          <%= review.TotalLiked %>
+          <div class='row'>
+        <strong><%=t("total")%>:</strong>
+        <%= review.TotalLiked %>
       </div>
     </div> 
     <div class="col-6">
+
       <%= review.rich_description %>
     </div>
 
   </div>
 </div>
+
  <%end%>
- <ul class='paginates'>
-  <% (1..@pages_count).each do |page| %>
-    <li class=<%="#{@current_page == page ? 'active' : ''}"%>>
-      <%= link_to "Page #{page}", reviews_path(page: page)%>
-    </li>  
-  <%end%>
-</ul>
-
-
