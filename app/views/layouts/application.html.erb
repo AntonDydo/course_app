@@ -64,10 +64,21 @@
 
 
         <main class=' <%= cookies[:theme] == 'dark' ? 'p-3 mb-2 bg-secondary text-white' : '' %><%= controller.controller_name %>'>
-          <%= form_tag results_path, method: :get, role: 'search' do%>
-          <%= text_field_tag :query, params[:query],:style=>'margin: 10px;' %>
-          <%= submit_tag "Искать", name: nil %>
-          <% end %>
+
+          
+          <div class = 'form'>
+            <%= form_tag results_path, method: :get, role: 'search' do%>
+            <div class = 'form-field '>
+              <div class = 'text-area'>
+                <%= text_field_tag :query, params[:query],:style=>'margin: 10px ;' %>
+                  <div class = 'submit-btn'>
+                      <%= submit_tag '', name: nil %>
+                  </div>
+              </div> 
+            </div>
+            
+            <% end %>
+          </div>
           
           <%= yield %>
         </main>

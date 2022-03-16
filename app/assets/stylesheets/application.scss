@@ -52,3 +52,41 @@ margin:5px;
 .dark{
 	background-color: black; 
 }
+.form{
+	margin: 30px auto;
+	width:fit-content;
+}
+.text-area {
+	display: flex;
+}
+.text-area input{
+	width: 800px;
+	height: 50px;
+	border-radius:25px;
+	background: #C4C4C4;
+	border: 0px;
+	padding-left: 30px;
+
+
+}
+.submit-btn input {
+	background: url('app/app/images/search.png');
+	width:26px;
+	height:26px;
+	
+}
+.submit-btn input {
+margin-top:20px;
+padding:0;
+    position: relative;
+    
+    width: 25px;
+    height: 25px; 
+    
+    box-sizing: border-box;
+    background-color: aliceblue;
+    
+    border: 5px solid slategray;
+    border-radius: 50%;
+}
+
