@@ -65,7 +65,7 @@
 
         <main class=' <%= cookies[:theme] == 'dark' ? 'p-3 mb-2 bg-secondary text-white' : '' %><%= controller.controller_name %>'>
 
-          
+          <div class = 'find'>Find review</div>
           <div class = 'form'>
             <%= form_tag results_path, method: :get, role: 'search' do%>
             <div class = 'form-field '>

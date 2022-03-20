@@ -1,18 +1,18 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1><%= t('reviews.title') %></h1>
 
-<h1><%=link_to t("popular"), showpopular_path%></h1>
-<span><h2><%=link_to 'games', sort_path(category: "game")%></h2>
-<h2><%=link_to 'films', sort_path(category: "film")%></h2>
-<h2><%=link_to 'serials', sort_path(category: "serial")%></h2>
-<h2><%=link_to 'books', sort_path(category: "book")%></h2>
-</span>
 
-<div class = 'add-button'>
-  <%= link_to t('new'), new_review_path %>
+
+<div class = 'tags'>
+<h2><%=link_to t('games'), sort_path(category: "game")%></h2>
+<h2><%=link_to t('films'), sort_path(category: "film")%></h2>
+<h2><%=link_to t('serials'), sort_path(category: "serial")%></h2>
+<h2><%=link_to t('books'), sort_path(category: "book")%></h2>
+<h2><%=link_to t("popular"), showpopular_path%></h2>
 </div>
+
+
  <% @reviews.each do |review| %>
  <div class='container own-container'>
   <div class='row '>

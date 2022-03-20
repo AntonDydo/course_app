@@ -16,11 +16,15 @@ ru:
   new: Новый
   google: Войти через google
   total: Добавлено в любимое
-  popular: Показать популярное
+  popular: "#популярные"
   game: Игра
   film: Фильм
   serial: Сериал
   book: Книга
+  books: "#книги"
+  games: "#игры"
+  films: "#фильмы" 
+  serials: "#сериалы"
   reviews:
     title: Обзоры
     alltitle: Мои обзоры
