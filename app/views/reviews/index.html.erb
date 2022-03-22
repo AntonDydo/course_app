@@ -5,62 +5,79 @@
 
 
 <div class = 'tags'>
-<h2><%=link_to t('games'), sort_path(category: "game")%></h2>
-<h2><%=link_to t('films'), sort_path(category: "film")%></h2>
-<h2><%=link_to t('serials'), sort_path(category: "serial")%></h2>
-<h2><%=link_to t('books'), sort_path(category: "book")%></h2>
-<h2><%=link_to t("popular"), showpopular_path%></h2>
+  <div class = 'container'>
+    <div class = 'row'>
+      <div class = 'col-sm'>
+         <h2 class = 'tag-item'><%=link_to t('games'), sort_path(category: "game")%></h2>
+      </div>
+      <div class = 'col-sm'>
+        <h2 class = 'tag-item'><%=link_to t('films'), sort_path(category: "film")%></h2>
+      </div>
+      <div class = 'col-sm'>
+        <h2 class = 'tag-item'><%=link_to t('serials'), sort_path(category: "serial")%></h2>
+      </div>
+      <div class = 'col-sm'>
+        <h2 class = 'tag-item'><%=link_to t('books'), sort_path(category: "book")%></h2>
+      </div>
+      <div class = 'col-sm'>
+        <h2 class = 'tag-item'><%=link_to t("popular"), showpopular_path%></h2>
+      </div>
+    </div>
+  </div>
 </div>
 
 
  <% @reviews.each do |review| %>
- <div class='container own-container'>
+ 
+    <div class='container own-container review-item'>
   <div class='row '>
-    <div class="col meta-inf">
-      <div class='row'>
+    <div class="col-4 meta-inf ">
+      <div class='row option'>
         <strong><%=t("title")%>:</strong>
         <%=link_to review.title, review %>
       </div>
-      <div class='row'>
+      <div class='row option'>
         <strong><%=t("category")%>:</strong>
         <%= review.category %>
       </div>
-      <div class='row'>
+      <div class='row option'>
         <strong><%=t("auth_grade")%>:</strong>
         <%= review.authors_grade %>
       </div>
-      <div class='row'>
+      <div class='row option'>
         <strong><%=t("avg")%>:</strong>
         <% rating = review.find_votes_for(vote_scope: 'rank').sum(:vote_weight).to_f  %>
         <% total = review.find_votes_for(vote_scope: 'rank').size.to_f %>
         <%= total== 0 ? "no raties" : (rating / total).round(1) %>
       </div>
-      <div class='row'>
+      <div class='row option'>
         <strong><%=t("author")%>:</strong>
         <%= User.find(review.user_id).email %>
       </div>
-      <div class='row own-row'>
-       <span><%= link_to "1", vote_path(review,:score => 1) %></span>
-      <span><%= link_to "2", vote_path(review,:score => 2) %></span>
-      <span><%= link_to "3", vote_path(review,:score => 3) %></span>
-      <span><%= link_to "4", vote_path(review,:score => 4) %></span>
-      <span><%= link_to "5", vote_path(review,:score => 5) %></span>
+      <div class='row own-row option'>
+      <span class = 'grade-item'><%= link_to "1", vote_path(review,:score => 1) %></span>
+      <span class = 'grade-item'><%= link_to "2", vote_path(review,:score => 2) %></span>
+      <span class = 'grade-item'><%= link_to "3", vote_path(review,:score => 3) %></span>
+      <span class = 'grade-item'><%= link_to "4", vote_path(review,:score => 4) %></span>
+      <span class = 'grade-item'><%= link_to "5", vote_path(review,:score => 5) %></span>
       </div>
-       <div class='row omwn-row'>
-        <span><%= link_to image_tag('like.png'),   favorited_path(review) %></span>
-      <span><%= link_to image_tag('dislike.png'),   unfavorited_path(review) %></span>
+       <div class='row omwn-row option'>
+        <span class="grade-img"><%= link_to image_tag('like.svg'),   favorited_path(review) %></span>
+        <span class="grade-img"><%= link_to image_tag('dislike.svg'),   unfavorited_path(review) %></span>
       </div>
-        <div class='row'>
+        <div class='row option'>
           <strong><%=t("total")%>:</strong>
           <%= review.TotalLiked %>
       </div>
     </div> 
-    <div class="col-6">
+    <div class="col-8">
       <%= review.rich_description %>
     </div>
 
   </div>
 </div>
+
+
  <%end%>
  <ul class='paginates'>
   <% (1..@pages_count).each do |page| %>
