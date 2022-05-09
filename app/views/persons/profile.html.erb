@@ -1,79 +1,135 @@
 <p id="notice"><%= notice %></p>
-<h1><%= t('reviews.alltitle') %></h1>
+<h1><%= t("reviews.alltitle") %></h1>
 <div class = 'add-button'>
-  <%= link_to t('new'), new_review_path %>
+  <%= link_to t("new"), new_review_path %>
 </div>
 <div class = "profile-option">
   <p class = 'profile-option-item all active'>
-    All reviews
+    All Reviews
+ 
   </p>
   <p class = 'profile-option-item fav'>
-    Favorited 
-  </p>
-</div>
-<% @reviews.each do |review| %>
-    <div class='container own-container review-item'>
-  <div class='row '>
-    <div class="col-4 meta-inf ">
-      <div class='row option'>
-        <strong><%=t("title")%>:</strong>
-        <%=link_to review.title, review %>
-      </div>
-      <div class='row option'>
-        <strong><%=t("category")%>:</strong>
-        <%= review.category %>
-      </div>
-      <div class='row option'>
-        <strong><%=t("auth_grade")%>:</strong>
-        <%= review.authors_grade %>
-      </div>
-      <div class='row option'>
-        <strong><%=t("avg")%>:</strong>
-        <% rating = review.find_votes_for(vote_scope: 'rank').sum(:vote_weight).to_f  %>
-        <% total = review.find_votes_for(vote_scope: 'rank').size.to_f %>
-        <%= total== 0 ? "no raties" : (rating / total).round(1) %>
-      </div>
-      <div class='row option'>
-        <strong><%=t("author")%>:</strong>
-        <%= User.find(review.user_id).email %>
-      </div>
-      <div class='row own-row option'>
-      <span class = 'grade-item'><%= link_to "1", vote_path(review,:score => 1) %></span>
-      <span class = 'grade-item'><%= link_to "2", vote_path(review,:score => 2) %></span>
-      <span class = 'grade-item'><%= link_to "3", vote_path(review,:score => 3) %></span>
-      <span class = 'grade-item'><%= link_to "4", vote_path(review,:score => 4) %></span>
-      <span class = 'grade-item'><%= link_to "5", vote_path(review,:score => 5) %></span>
-      </div>
-       <div class='row omwn-row option'>
-        <span class="grade-img"><%= link_to image_tag('like.svg'),   favorited_path(review) %></span>
-        <span class="grade-img"><%= link_to image_tag('dislike.svg'),   unfavorited_path(review) %></span>
-      </div>
-        <div class='row option'>
-          <strong><%=t("total")%>:</strong>
-          <%= review.TotalLiked %>
-      </div>
-    </div> 
-    <div class="col-8">
-      <%= review.rich_description %>
-    </div>
+      Favorited
 
-  </div>
+  </p>
+
 </div>
- <%end%>
-<span>Your favorites: </span>
-<% if current_user != nil  %>
+
+
+
+ <% @reviews.each do |review| %>
+ <div class='container own-container review-item active-rev profile profile-all'>
+   <div class='row '>
+     <div class="col-4 meta-inf ">
+       <div class='row option'>
+         <strong><%= t("title") %>:</strong>
+         <%= link_to review.title, review %>
+       </div>
+       <div class='row option'>
+         <strong><%= t("category") %>:</strong>
+         <%= review.category %>
+       </div>
+       <div class='row option'>
+         <strong><%= t("auth_grade") %>:</strong>
+         <%= review.authors_grade %>
+       </div>
+       <div class='row option'>
+         <strong><%= t("avg") %>:</strong>
+         <% rating = review.find_votes_for(vote_scope: "rank").sum(:vote_weight).to_f %>
+         <% total = review.find_votes_for(vote_scope: "rank").size.to_f %>
+         <%= total == 0 ? "no raties" : (rating / total).round(1) %>
+       </div>
+       <div class='row option'>
+         <strong><%= t("author") %>:</strong>
+         <%= User.find(review.user_id).email %>
+       </div>
+       <div class='row own-row option'>
+         <span class = 'grade-item'><%= link_to "1", vote_path(review, :score => 1) %></span>
+         <span class = 'grade-item'><%= link_to "2", vote_path(review, :score => 2) %></span>
+         <span class = 'grade-item'><%= link_to "3", vote_path(review, :score => 3) %></span>
+         <span class = 'grade-item'><%= link_to "4", vote_path(review, :score => 4) %></span>
+         <span class = 'grade-item'><%= link_to "5", vote_path(review, :score => 5) %></span>
+       </div>
+        <div class='row own-row option'>
+         <span class="grade-img"><%= link_to image_tag("like.svg"), favorited_path(review) %></span>
+         <span class="grade-img"><%= link_to image_tag("dislike.svg"), unfavorited_path(review) %></span>
+        <div class='row option'>
+         <strong><%= t("total") %>:</strong>
+         <%= review.TotalLiked %>
+         
+         </div> 
+       </div>
+     </div> 
+     <div class="col-8">
+       <%= review.rich_description %>
+     </div>
+   </div>
+ </div>
+ <% end %>
+ <%# --------------------------------------------------------- %>
 <% current_user.favorites.all.each do |review| %>
-<span><%=link_to review.title, review %>; </span>
-<% end %>
-<% end %>
-<div class='divider'></div>
-<% if current_user.admin? %>
-<% @users.each do |user| %>
-  <h6><%= link_to user.email, profile_path(user) %></h6>
-  <hr>
-<% end %>
-<% end %>
-<br>
-<%= link_to 'New Review', new_review_path %>
-    <%= javascript_pack_tag "profile" %>
+ <div class='container own-container review-item profile profile-fav '>
+   <div class='row '>
+     <div class="col-4 meta-inf ">
+       <div class='row option'>
+         <strong><%= t("title") %>:</strong>
+         <%= link_to review.title, review %>
+       </div>
+       <div class='row option'>
+         <strong><%= t("category") %>:</strong>
+         <%= review.category %>
+       </div>
+       <div class='row option'>
+         <strong><%= t("auth_grade") %>:</strong>
+         <%= review.authors_grade %>
+       </div>
+       <div class='row option'>
+         <strong><%= t("avg") %>:</strong>
+         <% rating = review.find_votes_for(vote_scope: "rank").sum(:vote_weight).to_f %>
+         <% total = review.find_votes_for(vote_scope: "rank").size.to_f %>
+         <%= total == 0 ? "no raties" : (rating / total).round(1) %>
+       </div>
+       <div class='row option'>
+         <strong><%= t("author") %>:</strong>
+         <%= User.find(review.user_id).email %>
+       </div>
+       <div class='row own-row option'>
+       <span class = 'grade-item'><%= link_to "1", vote_path(review, :score => 1) %></span>
+         <span class = 'grade-item'><%= link_to "2", vote_path(review, :score => 2) %></span>
+         <span class = 'grade-item'><%= link_to "3", vote_path(review, :score => 3) %></span>
+         <span class = 'grade-item'><%= link_to "4", vote_path(review, :score => 4) %></span>
+         <span class = 'grade-item'><%= link_to "5", vote_path(review, :score => 5) %></span>
+       </div>
+     <div class='row own-row option'>
+         <span class="grade-img"><%= link_to image_tag("like.svg"), favorited_path(review) %></span>
+         <span class="grade-img"><%= link_to image_tag("dislike.svg"), unfavorited_path(review) %></span>
+          <div class='row option'>
+         <strong><%= t("total") %>:</strong>
+         <%= review.TotalLiked %>
+         </div> 
+       </div>
+     </div> 
+     <div class="col-8">
+       <%= review.rich_description %>
+     </div>
+   </div>
+ </div>
+ <% end %>
+ <%# ----------------------------------------------------------------------------- %>
+ <span>Your favorites: </span>
+ <% if current_user != nil %>
+ <% current_user.favorites.all.each do |review| %>
+ <span><%= link_to review.title, review %>; </span>
+ <% end %>
+ <% end %>
+ <div class='divider'></div>
+ <% if current_user.admin? %>
+ <% @users.each do |user| %>
+ <h6><%= link_to user.email, profile_path(user) %></h6>
+ <hr>
+ <% end %>
+ <% end %>
+ <br>
+ <%= link_to "New Review", new_review_path %>
+ <%= javascript_pack_tag "profile" %>
 

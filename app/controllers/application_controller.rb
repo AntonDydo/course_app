@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   around_action :switch_locale
   before_action :authenticate_user!
+
   def default_url_options
     { locale: I18n.locale }
   end
@@ -17,5 +18,4 @@ class ApplicationController < ActionController::Base
     locale = cookies[:locale] || I18n.default_locale
     I18n.with_locale(locale, &block)
   end
-
 end

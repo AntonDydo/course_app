@@ -1,11 +1,16 @@
 class PersonsController < ApplicationController
-before_action :set_user, only: %i[ profile]
-before_action :authenticate_user!, only: %i[ profile] 
+before_action :set_user
+
+
+before_action :authenticate_user!
   
   def profile
     @reviews = @user.reviews.all.order('created_at DESC')
+    @reviews_fav = @user.favorites.all.order('created_at DESC')
     current_user.admin? ? @users = User.all : @users = nil
   end
+
+
 
 private
 

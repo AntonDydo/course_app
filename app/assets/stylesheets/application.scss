@@ -4,7 +4,7 @@ a{
 
 }
 a:hover{
-	color:#a9a9a9;
+	color:	#606060;
 }
 .own-container{
 	border: solid 1px black;
@@ -163,9 +163,23 @@ color: #000000;
 	font-size: 20px;
 }
 .profile-option-item:hover{
-cursor:pointer;
+ cursor:pointer;
 }
 .profile-option-item.active{
 	margin: 0 30px;
 	background: #C4C4C4;
+}
+.test{
+	border: solid 1px black;
+
+}
+.test:hover{
+	cursor:pointer;
+ }
+ 
+ .profile.active-rev{
+	 display: block;
+ }
+ .profile{
+	display: none;
 }

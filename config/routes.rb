@@ -4,6 +4,7 @@
       get  'reviews/popular', to: 'reviews#popular', as: 'showpopular'
       get  'reviews/sort', to: 'reviews#sort', as: 'sort'
       get 'person/profile/:id', to: 'persons#profile', as: 'profile'
+      get 'person/profile/:id', to: 'persons#profile_fav', as: 'profile_fav'
       resources :reviews
       get 'favorites/:id', to: 'reviews#favorite', as: 'favorited'
       get 'unfavorites/:id', to: 'reviews#unfavorite', as: 'unfavorited'

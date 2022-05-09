@@ -7,14 +7,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
   </head>
 
-  <body>
+            <body>
     <header class = "header">
-      <nav class="my-navbar navbar navbar-expand-lg navbar-light bg-light <%=  cookies[:theme] == 'dark' ? "navbar-dark bg-dark"  : ''%>">
-        <a class="navbar-brand" href="/"><%= t('main') %></a>
+      <nav class="my-navbar navbar navbar-expand-lg navbar-light bg-light <%= cookies[:theme] == "dark" ? "navbar-dark bg-dark" : "" %>">
+        <a class="navbar-brand" href="/"><%= t("main") %></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,21 +23,21 @@
             
             <li class="nav-item active">
               <div class="nav-link" href="#"><% if current_user != nil %>
-                <%= link_to t('profile'), profile_path(current_user) , :style=>'color: DarkGrey;'%>
-                <%end%> </div>
+                <%= link_to t("profile"), profile_path(current_user), :style => "color: DarkGrey;" %>
+                <% end %> </div>
               </li>
 
               <li class="nav-item active">
-                <div class="nav-link" href="#"><%= link_to t("ru"), cookieset_path(locale: 'ru'), :style=>'color: DarkGrey;' %></div>
+                <div class="nav-link" href="#"><%= link_to t("ru"), cookieset_path(locale: "ru"), :style => "color: DarkGrey;" %></div>
               </li>
               <li class="nav-item active">
-                <div class="nav-link" href="#"><%= link_to t("en"), cookieset_path(locale: 'en') , :style=>'color: DarkGrey;'%></div>
+                <div class="nav-link" href="#"><%= link_to t("en"), cookieset_path(locale: "en"), :style => "color: DarkGrey;" %></div>
               </li>
               <li class="nav-item active">
-                <div class="nav-link" href="#"><%= link_to t("theme-dark"), cookieset_path(theme: 'dark') , :style=>'color: DarkGrey;'%></div>
+                <div class="nav-link" href="#"><%= link_to t("theme-dark"), cookieset_path(theme: "dark"), :style => "color: DarkGrey;" %></div>
               </li>
               <li class="nav-item active">
-                <div class="nav-link" href="#"><%= link_to t("theme-light"), cookieset_path(theme: 'light'), :style=>'color: DarkGrey;' %></div>
+                <div class="nav-link" href="#"><%= link_to t("theme-light"), cookieset_path(theme: "light"), :style => "color: DarkGrey;" %></div>
               </ul>
               <span class="navbar-text">
 
@@ -48,10 +48,10 @@
                     Log options
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#"><%= link_to t('create'), new_user_registration_path %></a>
-                    <a class="dropdown-item" href="#"><%= link_to t('log'), new_user_session_path %></a>
-                    <a class="dropdown-item" href="#"><%= link_to t('exit'), destroy_user_session_path, :method => :delete %></a>
-                    <a class="dropdown-item" href="#"><%= link_to t('google'), user_google_oauth2_omniauth_authorize_path, method: :post %></a>
+                    <a class="dropdown-item" href="#"><%= link_to t("create"), new_user_registration_path %></a>
+                    <a class="dropdown-item" href="#"><%= link_to t("log"), new_user_session_path %></a>
+                    <a class="dropdown-item" href="#"><%= link_to t("exit"), destroy_user_session_path, :method => :delete %></a>
+                    <a class="dropdown-item" href="#"><%= link_to t("google"), user_google_oauth2_omniauth_authorize_path, method: :post %></a>
                   </div>
                 </div>
               </span>
@@ -63,16 +63,16 @@
 
 
 
-        <main class=' <%= cookies[:theme] == 'dark' ? 'p-3 mb-2 bg-secondary text-white' : '' %><%= controller.controller_name %>'>
+        <main class=' <%= cookies[:theme] == "dark" ? "p-3 mb-2 bg-secondary text-white" : "" %><%= controller.controller_name %>'>
 
           <div class = 'find'>Find review</div>
           <div class = 'form'>
-            <%= form_tag results_path, method: :get, role: 'search' do%>
+            <%= form_tag results_path, method: :get, role: "search" do %>
             <div class = 'form-field '>
               <div class = 'text-area'>
-                <%= text_field_tag :query, params[:query],:style=>'margin: 10px ;' %>
+                <%= text_field_tag :query, params[:query], :style => "margin: 10px ;" %>
                   <div class = 'submit-btn'>
-                      <%= submit_tag '', name: nil %>
+                      <%= submit_tag "", name: nil %>
                   </div>
               </div> 
             </div>
